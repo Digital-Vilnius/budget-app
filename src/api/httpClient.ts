@@ -30,7 +30,7 @@ httpClient.interceptors.response.use(
     switch (status) {
       case 401: {
         if (!isRefreshing) {
-          store.dispatch(refreshTokenAction({ refreshToken }));
+          await store.dispatch(refreshTokenAction({ refreshToken })).unwrap();
           return httpClient(config);
         }
 
