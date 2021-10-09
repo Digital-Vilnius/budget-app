@@ -1,19 +1,11 @@
 import httpClient from '../../httpClient';
-import {
-  AddSpaceUserRequest,
-  EditSpaceUserRequest,
-  SpaceUser,
-  SpaceUsersListItem,
-} from './types';
+import { AddSpaceUserRequest, EditSpaceUserRequest, SpaceUser, SpaceUsersListItem } from './types';
 import { ListRequest, ListResponse, ResultResponse } from '@api/types';
 
 const baseUrl = '/spaceUsers';
 
 export const addSpaceUser = async (request: AddSpaceUserRequest) => {
-  return httpClient.post<AddSpaceUserRequest, ResultResponse<SpaceUser>>(
-    baseUrl,
-    request
-  );
+  return httpClient.post<AddSpaceUserRequest, ResultResponse<SpaceUser>>(baseUrl, request);
 };
 
 export const getSpaceUsers = async (request: ListRequest) => {

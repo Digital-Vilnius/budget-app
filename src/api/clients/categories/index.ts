@@ -1,10 +1,5 @@
 import httpClient from '../../httpClient';
-import {
-  AddCategoryRequest,
-  EditCategoryRequest,
-  CategoriesListItem,
-  Category,
-} from './types';
+import { AddCategoryRequest, EditCategoryRequest, CategoriesListItem, Category } from './types';
 import { ListRequest, ListResponse, ResultResponse } from '@api/types';
 
 const baseUrl = '/categories';
@@ -25,10 +20,7 @@ export const getCategory = async (id: string) => {
 };
 
 export const editCategory = async (id: string, request: EditCategoryRequest) => {
-  return httpClient.put<EditCategoryRequest, ResultResponse<Category>>(
-    `${baseUrl}/${id}`,
-    request
-  );
+  return httpClient.put<EditCategoryRequest, ResultResponse<Category>>(`${baseUrl}/${id}`, request);
 };
 
 export const deleteCategory = async (id: string) => {

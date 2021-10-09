@@ -1,4 +1,4 @@
-import { BaseModel } from '../../types';
+import { BaseModel } from '@api/types';
 import { CategoriesListItem } from '../categories/types';
 
 export interface AddOperationRequest {

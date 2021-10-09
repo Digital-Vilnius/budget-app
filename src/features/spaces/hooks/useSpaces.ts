@@ -10,6 +10,7 @@ const useSpaces = () => {
   const { isLoading, spaces, isRefreshing, count, paging, sort } = useAppSelector(
     (state) => state.spaces
   );
+
   const dispatch = useAppDispatch();
 
   useEffect(() => {

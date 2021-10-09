@@ -1,16 +1,20 @@
 import { useAppDispatch, useAppSelector } from '@store';
 import { useEffect } from 'react';
-import { getSpaceAction } from '@features/spaces/actions';
+import { getSpaceAction, refreshSpaceAction } from '@features/spaces/actions';
 
 const useSpace = (id: string) => {
-  const { isLoading, space } = useAppSelector((state) => state.spaces);
+  const { isLoading, space, isRefreshing } = useAppSelector((state) => state.spaces);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getSpaceAction(id));
   }, [dispatch, id]);
 
-  return { isLoading, space };
+  const refresh = () => {
+    dispatch(refreshSpaceAction(id));
+  };
+
+  return { isLoading, space, refresh, isRefreshing };
 };
 
 export default useSpace;

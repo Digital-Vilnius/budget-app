@@ -1,4 +1,4 @@
-import { BaseModel } from '../../types';
+import { BaseModel } from '@api/types';
 
 export interface AddCategoryRequest {
   name: string;

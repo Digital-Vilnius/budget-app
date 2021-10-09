@@ -1,4 +1,5 @@
 import useSpaces from './useSpaces';
 import useSpace from './useSpace';
+import useCachedSpace from './useCachedSpace';
 
-export { useSpaces, useSpace };
+export { useSpaces, useSpace, useCachedSpace };

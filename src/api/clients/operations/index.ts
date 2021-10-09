@@ -1,19 +1,11 @@
 import httpClient from '../../httpClient';
-import {
-  AddOperationRequest,
-  EditOperationRequest,
-  Operation,
-  OperationsListItem,
-} from './types';
+import { AddOperationRequest, EditOperationRequest, Operation, OperationsListItem } from './types';
 import { ListRequest, ListResponse, ResultResponse } from '@api/types';
 
 const baseUrl = '/operations';
 
 export const addOperation = async (request: AddOperationRequest) => {
-  return httpClient.post<AddOperationRequest, ResultResponse<Operation>>(
-    baseUrl,
-    request
-  );
+  return httpClient.post<AddOperationRequest, ResultResponse<Operation>>(baseUrl, request);
 };
 
 export const getOperations = async (request: ListRequest) => {
